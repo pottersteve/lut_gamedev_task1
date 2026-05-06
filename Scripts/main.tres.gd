@@ -26,7 +26,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_pressed("ui_down"):
 		direction.y += 1
 	
-	if direction.length() > 0:
+	if direction.length() > 0: #so we dont divide by 0
 		direction = direction.normalized()
 		
 	$Icon.position += direction * SPEED * delta
